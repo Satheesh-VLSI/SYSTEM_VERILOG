@@ -13,18 +13,26 @@ module enumerated_data_types;
     a2=a2.last();
      
     $display("Alphabet and its value (last) of a2: %s = %0d \n",a2.name(),a2);
-        
+    $display("\n---- Forward Traversal----\n");    
     a1=a1.first();
     for(j=0;j<a1.num();j++)begin
       $display("Alphabet and its value of a1 : %s = %0d ",a1.name(),a1);
       a1=a1.next();   
     end
-     $display("\n\n");
-
+     $display("\n");
+    $display("\n---- Backward Traversal----\n");    
     for(i=0;i<a2.num();i++)begin
       $display("Alphabet and its value of a2: %s = %0d ",a2.name(),a2);
       a2=a2.prev();
     end
+    
+    //type casting
+    a1=alpha'(9);
+        $display("\nAlphabet and its value of a1 : %s = %0d \n",a1.name,a1);
+    a1=alpha'(11);
+        $display("Alphabet and its value of a2 : %s = %0d \n",a2.name,a2);
+     
+    
 
     #10; $finish;
   end 
