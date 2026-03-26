@@ -1,4 +1,4 @@
-module state_state_data_types;
+module type_casting;
   
 
   
@@ -14,10 +14,10 @@ module state_state_data_types;
   real j1;
          
   bit [3:0] a2;
-  byte      b2;
-  int       c2;
-  shortint  d2;
-  longint   e2;
+  byte  b2;
+  int   c2;
+  shortint d2;
+  longint e2;
   string f2;
   wire [3:0] g2;
   reg [3:0] h2;
