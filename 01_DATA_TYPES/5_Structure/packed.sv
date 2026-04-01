@@ -61,6 +61,36 @@ module packed_structure;
     
   
   end
-  
-  
 endmodule
+
+/*========================================
+             Packed Structure            
+========================================
+---------------------------------
+             HP 15S         
+Price:52000
+Display:15
+Storage:520
+RAM:8
+GPU:0
+---------------------------------
+           HP pavilion    
+Price:60000
+Display:14
+Storage:512
+RAM:8
+GPU:4
+---------------------------------
+          Lenovo ideapad 
+Price:40000
+Display:14
+Storage:256
+RAM:4
+GPU:0
+---------------------------------
+             MAC 14         
+Price:150000
+Display:14
+Storage:1024
+RAM:0
+GPU:4*/
