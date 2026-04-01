@@ -10,8 +10,8 @@ module shift;
     $display("----------------------------------\n");
     $display("%b left shift(<<) %b              : %b",a,b,a<<b);
     $display("%b right shift(>>) %b             : %b",a,b,a>>b); 
-    $display("%b arithmetic left shift(<<<) %b  :%b",a,b,a<<<b);
-    $display("%b arithmetic right shift(>>>) %b :%0b",a,b,a>>>b);
+    $display("%b arithmetic left shift(<<<) %b  : %b",a,b,a<<<b);
+    $display("%b arithmetic right shift(>>>) %b : %b",a,b,a>>>b);
     
     
     
@@ -21,8 +21,8 @@ module shift;
     $display("----------------------------------\n");
     $display("%b left shift(<<) %b              : %b",a,b,a<<b);
     $display("%b right shift(>>) %b             : %b",a,b,a>>b); 
-    $display("%b arithmetic left shift(<<<) %b  :%b",a,b,a<<<b);
-    $display("%b arithmetic right shift(>>>) %b :%0b",a,b,a>>>b);
+    $display("%b arithmetic left shift(<<<) %b  : %b",a,b,a<<<b);
+    $display("%b arithmetic right shift(>>>) %b : %b",a,b,a>>>b);
     
     
   end
@@ -35,12 +35,12 @@ endmodule
 
 00110 left shift(<<) 00010              : 11000
 00110 right shift(>>) 00010             : 00001
-00110 arithmetic left shift(<<<) 00010  :11000
-00110 arithmetic right shift(>>>) 00010 :1
+00110 arithmetic left shift(<<<) 00010  : 11000
+00110 arithmetic right shift(>>>) 00010 : 00001
 ----------------------------------
 
 10101 left shift(<<) 00011              : 01000
 10101 right shift(>>) 00011             : 00010
-10101 arithmetic left shift(<<<) 00011  :01000
-10101 arithmetic right shift(>>>) 00011 :11110
+10101 arithmetic left shift(<<<) 00011  : 01000
+10101 arithmetic right shift(>>>) 00011 : 11110
 */
