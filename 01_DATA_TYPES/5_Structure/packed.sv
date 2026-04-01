@@ -4,7 +4,7 @@ module packed_structure;
     int price;
     int storage;
     byte display ;
-    bit [3:0] RAM;
+    bit [4:0] RAM;
     byte gpu;
   } laptop;
   
@@ -13,11 +13,11 @@ module packed_structure;
   laptop lenovo_ideapad;
   laptop mac_14;
   
-  laptop laptop_t[4];
+  laptop laptop_t[5];
   initial begin 
-    hp_15s='{52000,520,15,8,0};
+    hp_15s='{52000,512,15,8,0};
     
-    hp_pavilion='{price:60000,display:14.2,storage:512,RAM:8,gpu:4};
+    hp_pavilion='{price:60000,display:16,storage:512,RAM:8,gpu:4};
     
     lenovo_ideapad.price=40000;
     lenovo_ideapad.display=14;
@@ -57,12 +57,22 @@ module packed_structure;
       $display("GPU:%0d",laptop_t[i].gpu);
       
     end
+    $display("\n\n---------------------------------");
+    $display("       Adding two laptops\n\nHP_15S + HP_Pavilion");
+    laptop_t [4]=hp_15s+hp_pavilion;
+    
+    $display("Price:%0d",laptop_t[4].price);
+    $display("Display:%0d",laptop_t[4].display);
+    $display("Storage:%0d",laptop_t[4].storage);
+    $display("RAM:%0d",laptop_t[4].RAM);
+    $display("GPU:%0d",laptop_t[4].gpu);
     
     
   
   end
+  
+  
 endmodule
-
 /*========================================
              Packed Structure            
 ========================================
@@ -70,13 +80,13 @@ endmodule
              HP 15S         
 Price:52000
 Display:15
-Storage:520
+Storage:512
 RAM:8
 GPU:0
 ---------------------------------
            HP pavilion    
 Price:60000
-Display:14
+Display:16
 Storage:512
 RAM:8
 GPU:4
@@ -92,5 +102,26 @@ GPU:0
 Price:150000
 Display:14
 Storage:1024
+RAM:16
+GPU:4
+---------------------------------
+       no laptop         
+Price:0
+Display:0
+Storage:0
 RAM:0
-GPU:4*/
+GPU:0
+---------------------------------
+       Adding two laptops
+       
+HP_15S + HP_Pavilion
+Price:112000
+Display:31
+Storage:1024
+RAM:16
+GPU:4
+*/
+
+
+
+
