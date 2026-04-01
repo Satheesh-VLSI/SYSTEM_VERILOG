@@ -2,7 +2,7 @@ module arithmetic;
 
   int a=396;
   int b=45;
-  int out[5];
+  int out[6];
   
   initial begin 
     out[0]=a+b; 
@@ -11,26 +11,31 @@ module arithmetic;
     out[3]=a%b; 
     out[4]=a**b; 
     
-    $display("____________________________________");
+    $display("-----------------------------------");
     $display("        ARITHMETIC OPERATORS      ");
-    $display("____________________________________\n");
+    $display("-----------------------------------\n");
     $display("Addition   : %0d + %0d = %0d",a,b,out[0]);
     $display("Subtraction: %0d - %0d = %0d",a,b,out[1]);
     $display("Multiply   : %0d x %0d = %0d",a,b,out[2]);
     $display("Divide     : %0d / %0d = %0d",a,b,out[3]);
-    $display("Exponent   : %0d ^ %0d = %0d",a,b,out[4]);
+    $display("Divide     : %0d mod %0d = %0d",a,b,out[4]);
+    $display("Exponent   : %0d ^ %0d = %0d",a,b,out[5]);
     
   end
 
 endmodule
-/*
-____________________________________
-       ARITHMETIC OPERATORS      
-____________________________________
+/*-----------------------------------
+        ARITHMETIC OPERATORS      
+-----------------------------------
 
 Addition   : 396 + 45 = 441
 Subtraction: 396 - 45 = 351
 Multiply   : 396 x 45 = 8
 Divide     : 396 / 45 = 36
-Exponent   : 396 ^ 45 = 0*/
+Divide     : 396 mod 45 = 0
+Exponent   : 396 ^ 45 = 0
+*/
+
+
+
 
