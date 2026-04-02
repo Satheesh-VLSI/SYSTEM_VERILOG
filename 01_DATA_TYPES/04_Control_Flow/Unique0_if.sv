@@ -34,6 +34,9 @@ module unique0_if_else;
     a=100;
     op(a);
     
+    a=0;
+    op(a);
+    
     a=1000;
     op(a);
     
@@ -74,6 +77,11 @@ testbench.sv, 104
 
 input a = 100
 input is positive
+
+--------------------------
+
+input a = 0
+input is zero
 
 --------------------------
 
