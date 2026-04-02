@@ -17,7 +17,7 @@ module for_loop;
         for(;n<0;n++)
            sum=sum+n;
         end
-    $display("Sum of %0d numbers from 0 : %0d",n,sum);
+    $display("Sum of %0d numbers from 0 : %0d",temp,sum);
     $display("\n----------------------------------\n");
     
   endfunction
