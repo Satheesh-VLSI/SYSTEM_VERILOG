@@ -30,6 +30,9 @@ module unique_if_else;
     a=-200;
     op(a);
     
+    a=0;
+    op(a);
+    
     a=100;
     op(a);
     
@@ -46,6 +49,7 @@ module unique_if_else;
     op(a);
   end
 endmodule
+
 
 /*
 --------------------------
@@ -67,6 +71,11 @@ testbench.sv, 53
   
   Line number 59 and 61 are overlapping.
 
+
+--------------------------
+
+input a = 0
+input is zero
 
 --------------------------
 
