@@ -62,6 +62,7 @@ module call_by_reference;
     data_display(data,parity);
     
   end
+  endmodule
 
   /*
 -------------------------------------------
@@ -116,4 +117,4 @@ Data = 000100111
 
 -------------------------------------------*/
     
-endmodule
+
