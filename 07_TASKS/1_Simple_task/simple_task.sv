@@ -2,7 +2,7 @@ module simple_task;
   byte in;
   bit prime;
   
-  task automatic prime_or_not(input byte num,output bit yes);
+  task prime_or_not(input byte num,output bit yes);
     yes=1;
     if(num inside {0,1})
       yes=0;
@@ -19,7 +19,7 @@ module simple_task;
     end
   endtask
   
-  task automatic display(input byte num,input bit yes);
+  task display(input byte num,input bit yes);
     if(yes)
       $display("The Number %0d is a PRIME",num);
     else
