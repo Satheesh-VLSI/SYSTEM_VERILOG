@@ -3,13 +3,14 @@ module automatic_task;
   bit stuffed[$];
   bit destuffed[$];
   
-  //task for stuffing
+  
   task automatic stuffing(input bit data_in[],output bit stuff_out[$]);
     
     shortint count;
     
     foreach (data_in[i])begin
       stuff_out.push_back(data_in[i]);
+      
       
       if(data_in[i]==1)
         count++;
@@ -23,7 +24,7 @@ module automatic_task;
     end
   endtask  
   
-  //task for de-stuffing
+  
   task automatic de_stuffing(input bit stuff_in[$],output bit de_stuff_out[$]);
     
     shortint count;
@@ -64,7 +65,7 @@ module automatic_task;
     
     
     $display("------------------------------------------");
-    data_in='{1,1,1,1,1,1,1,1}; 
+    data_in='{1,0,1,1,1,1,1,1}; 
     $display("Data = %0p",data_in);
     stuffing(data_in,stuffed);
     de_stuffing(stuffed,destuffed);
@@ -78,15 +79,13 @@ module automatic_task;
     de_stuffing(stuffed,destuffed);
     $display("Stuffed data = %0p",stuffed);
     $display("De-Stuffed data = %0p",destuffed);
-    
     $display("------------------------------------------");
-    data_in='{1,1,1,1,1,1,1,1}; 
+    data_in='{1,1,0,1,1,1,1,1}; 
     $display("Data = %0p",data_in);
     stuffing(data_in,stuffed);
     de_stuffing(stuffed,destuffed);
     $display("Stuffed data = %0p",stuffed);
     $display("De-Stuffed data = %0p",destuffed);
-    
     $display("------------------------------------------");
     data_in='{1,1,1,1,0,1,1,1}; 
     $display("Data = %0p",data_in);
@@ -94,7 +93,6 @@ module automatic_task;
     de_stuffing(stuffed,destuffed);
     $display("Stuffed data = %0p",stuffed);
     $display("De-Stuffed data = %0p",destuffed);
-    
     $display("------------------------------------------");
     data_in='{1,1,0,1,1,1,1,1,0}; 
     $display("Data = %0p",data_in);
@@ -102,9 +100,36 @@ module automatic_task;
     de_stuffing(stuffed,destuffed);
     $display("Stuffed data = %0p",stuffed);
     $display("De-Stuffed data = %0p",destuffed);
-    
     $display("------------------------------------------");
   end 
 endmodule
-
+/*
+ -------------------------------------------
+#  AUTOMATIC TASK - Stuffing and De_Stuffing
+# -------------------------------------------
+# Data = 1 1 1 1 1 1 1 1
+# Stuffed data = 1 1 1 1 1 0 1 1 1
+# De-Stuffed data = 1 1 1 1 1 1 1 1
+# ------------------------------------------
+# Data = 1 0 1 1 1 1 1 1
+# Stuffed data = 1 0 1 1 1 1 1 0 1
+# De-Stuffed data = 1 0 1 1 1 1 1 1
+# ------------------------------------------
+# Data = 1 1 1 1 0 1 1 1 1 1 1
+# Stuffed data = 1 1 1 1 0 1 1 1 1 1 0 1
+# De-Stuffed data = 1 1 1 1 0 1 1 1 1 1 1
+# ------------------------------------------
+# Data = 1 1 0 1 1 1 1 1
+# Stuffed data = 1 1 0 1 1 1 1 1 0
+# De-Stuffed data = 1 1 0 1 1 1 1 1
+# ------------------------------------------
+# Data = 1 1 1 1 0 1 1 1
+# Stuffed data = 1 1 1 1 0 1 1 1
+# De-Stuffed data = 1 1 1 1 0 1 1 1
+# ------------------------------------------
+# Data = 1 1 0 1 1 1 1 1 0
+# Stuffed data = 1 1 0 1 1 1 1 1 0 0
+# De-Stuffed data = 1 1 0 1 1 1 1 1 0
+# ------------------------------------------
+*/
 
