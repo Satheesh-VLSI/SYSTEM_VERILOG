@@ -1,5 +1,5 @@
 
-module wait_fork;
+module fork_join_none;
   
   task automatic display_start(input string a);
     #10;
@@ -14,9 +14,9 @@ module wait_fork;
   initial begin
     //with fork-join
     
-    $display("--------------------------------------");
+    $display("======================================");
     $display("   Fork-Join_none Without wait_fork  ");
-    $display("--------------------------------------");
+    $display("======================================");
      fork
        begin:child_1
        display_start("Thread 1 started");
@@ -40,9 +40,9 @@ module wait_fork;
     #60;
     #0;
     
-    $display("-------------------------------------");
+    $display("=====================================");
     $display("    Fork-Join_none With wait_fork    ");
-    $display("-------------------------------------");
+    $display("=====================================");
      fork
        begin:child_3
        display_start("Thread 1 started");
@@ -75,10 +75,11 @@ module wait_fork;
 end
   
 endmodule
+		
 /*
---------------------------------------
+======================================
    Fork-Join_none Without wait_fork  
---------------------------------------
+======================================
 ------------------------------------
 Execution Came out of Fork-join_none
 ------------------------------------
@@ -92,9 +93,9 @@ Execution Came out of Fork-join_none
 	Thread 4 Ended at 40
 	Thread 5 started at 50
 	Thread 5 Ended at 60
--------------------------------------
+=====================================
     Fork-Join_none With wait_fork    
--------------------------------------
+=====================================
 	Thread 1 started at 70
 	Thread 3 started at 70
 	Thread 1 Ended at 80
