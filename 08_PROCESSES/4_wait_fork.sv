@@ -1,5 +1,5 @@
 
-module fork_join_none;
+module wait_fork;
   
   task automatic display_start(input string a);
     #10;
