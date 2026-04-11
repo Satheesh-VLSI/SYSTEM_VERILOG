@@ -37,7 +37,7 @@ module fork_join_none;
     $display("------------------------------------");
     $display("Execution Came out of Fork-join_none");
     $display("------------------------------------");
-    #50;
+    #60;
     #0;
     
     $display("------------------------------------");
@@ -76,19 +76,19 @@ Execution Came out of Fork-join_none
 	Thread 2 Ended at 40
 	Thread 4 Ended at 40
 	Thread 5 started at 50
+	Thread 5 Ended at 60
 ------------------------------------
         Without Fork-Join_none
 ------------------------------------
-	Thread 5 Ended at 60
-	Thread 6 started at 60
-	Thread 6 Ended at 70
-	Thread 7 started at 80
-	Thread 7 Ended at 90
-	Thread 8 started at 100
-	Thread 8 Ended at 110
-	Thread 9 started at 120
-	Thread 9 Ended at 130
-	Thread 10 started at 140
-	Thread 10 Ended at 150
+	Thread 6 started at 70
+	Thread 6 Ended at 80
+	Thread 7 started at 90
+	Thread 7 Ended at 100
+	Thread 8 started at 110
+	Thread 8 Ended at 120
+	Thread 9 started at 130
+	Thread 9 Ended at 140
+	Thread 10 started at 150
+	Thread 10 Ended at 160
 */
 
