@@ -1,4 +1,5 @@
 
+
 module fork_join_none;
   
   task automatic display_start(input string a);
@@ -14,9 +15,9 @@ module fork_join_none;
   initial begin
     //with fork-join
     
-    $display("------------------------------------");
-    $display("          With Fork-Join_none");
-    $display("------------------------------------");
+    $display("====================================");
+    $display("        With Fork-Join_none");
+    $display("====================================");
      fork
        begin:child_1
        display_start("Thread 1 started");
@@ -40,9 +41,9 @@ module fork_join_none;
     #60;
     #0;
     
-    $display("------------------------------------");
+    $display("====================================");
     $display("        Without Fork-Join_none");
-    $display("------------------------------------");
+    $display("====================================");
     
     //without fork-join
     display_start("Thread 6 started");
@@ -60,10 +61,12 @@ module fork_join_none;
 end
   
 endmodule
+
 /*
-------------------------------------
-          With Fork-Join_none
-------------------------------------
+====================================
+        With Fork-Join_none
+====================================
+
 ------------------------------------
 Execution Came out of Fork-join_none
 ------------------------------------
@@ -77,9 +80,9 @@ Execution Came out of Fork-join_none
 	Thread 4 Ended at 40
 	Thread 5 started at 50
 	Thread 5 Ended at 60
-------------------------------------
+====================================
         Without Fork-Join_none
-------------------------------------
+====================================
 	Thread 6 started at 70
 	Thread 6 Ended at 80
 	Thread 7 started at 90
