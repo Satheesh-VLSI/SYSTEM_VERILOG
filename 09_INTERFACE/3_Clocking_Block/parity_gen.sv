@@ -113,27 +113,27 @@ module parity_gen_FSM_Tb(port.tb P);
 endmodule
 
 /*
-                   0Data_in=000   clk=1   rst=1   even_parity=1  odd_parity=0
-                   5Data_in=000   clk=0   rst=0   even_parity=1  odd_parity=0
-                  10Data_in=000   clk=1   rst=0   even_parity=1  odd_parity=0
-                  15Data_in=000   clk=0   rst=0   even_parity=1  odd_parity=0
-                  20Data_in=000   clk=1   rst=0   even_parity=1  odd_parity=0
-                  25Data_in=001   clk=0   rst=0   even_parity=1  odd_parity=0
-                  30Data_in=001   clk=1   rst=0   even_parity=0  odd_parity=1
-                  35Data_in=010   clk=0   rst=0   even_parity=0  odd_parity=1
-                  40Data_in=010   clk=1   rst=0   even_parity=0  odd_parity=1
-                  45Data_in=011   clk=0   rst=0   even_parity=0  odd_parity=1
-                  50Data_in=011   clk=1   rst=0   even_parity=1  odd_parity=0
-                  55Data_in=100   clk=0   rst=0   even_parity=1  odd_parity=0
-                  60Data_in=100   clk=1   rst=0   even_parity=0  odd_parity=1
-                  65Data_in=101   clk=0   rst=0   even_parity=0  odd_parity=1
-                  70Data_in=101   clk=1   rst=0   even_parity=1  odd_parity=0
-                  75Data_in=110   clk=0   rst=0   even_parity=1  odd_parity=0
-                  80Data_in=110   clk=1   rst=0   even_parity=1  odd_parity=0
-                  85Data_in=111   clk=0   rst=0   even_parity=1  odd_parity=0
-                  90Data_in=111   clk=1   rst=0   even_parity=0  odd_parity=1
-                  95Data_in=111   clk=0   rst=0   even_parity=0  odd_parity=1
-                 100Data_in=111   clk=1   rst=0   even_parity=0  odd_parity=1
+                   0Data_in=xxxxx   clk=0   rst=x   even_parity=0  odd_parity=0
+                   5Data_in=00100   clk=1   rst=0   even_parity=1  odd_parity=0
+                  10Data_in=00100   clk=0   rst=0   even_parity=1  odd_parity=0
+                  15Data_in=00001   clk=1   rst=0   even_parity=0  odd_parity=1
+                  20Data_in=00001   clk=0   rst=0   even_parity=0  odd_parity=1
+                  25Data_in=01001   clk=1   rst=0   even_parity=0  odd_parity=1
+                  30Data_in=01001   clk=0   rst=0   even_parity=0  odd_parity=1
+                  35Data_in=00011   clk=1   rst=0   even_parity=1  odd_parity=0
+                  40Data_in=00011   clk=0   rst=0   even_parity=1  odd_parity=0
+                  45Data_in=01101   clk=1   rst=0   even_parity=1  odd_parity=0
+                  50Data_in=01101   clk=0   rst=0   even_parity=1  odd_parity=0
+                  55Data_in=01101   clk=1   rst=0   even_parity=0  odd_parity=1
+                  60Data_in=01101   clk=0   rst=0   even_parity=0  odd_parity=1
+                  65Data_in=00101   clk=1   rst=0   even_parity=0  odd_parity=1
+                  70Data_in=00101   clk=0   rst=0   even_parity=0  odd_parity=1
+                  75Data_in=10010   clk=1   rst=0   even_parity=1  odd_parity=0
+                  80Data_in=10010   clk=0   rst=0   even_parity=1  odd_parity=0
+                  85Data_in=00001   clk=1   rst=0   even_parity=1  odd_parity=0
+                  90Data_in=00001   clk=0   rst=0   even_parity=1  odd_parity=0
+                  95Data_in=00001   clk=1   rst=0   even_parity=0  odd_parity=1
+                 100Data_in=00001   clk=0   rst=0   even_parity=0  odd_parity=1
  
     */
 
