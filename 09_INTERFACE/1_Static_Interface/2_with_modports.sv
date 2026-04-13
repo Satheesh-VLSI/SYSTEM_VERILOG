@@ -9,10 +9,10 @@ endmodule
 //              INTERFACE
 //====================================
   interface ports;
-    logic [3:0] a;
-    logic [3:0] b;
+    logic signed[3:0] a;
+    logic signed [3:0] b;
     logic [3:0] op;
-    logic [7:0] out;
+    logic signed[7:0] out;
     
     modport dut_port(input a,input b,input op,output out);
     modport tb_port(output a,output b,output op,input out);
