@@ -13,10 +13,10 @@ endmodule
 //       INTERFACE
 // ====================
   interface ports;
-    logic [3:0] a;
-    logic [3:0] b;
+    logic signed [3:0] a;
+    logic signed [3:0] b;
     logic [3:0] op;
-    logic [7:0] out;
+    logic signed [7:0] out;
 endinterface
 // ====================
 //          DUT
