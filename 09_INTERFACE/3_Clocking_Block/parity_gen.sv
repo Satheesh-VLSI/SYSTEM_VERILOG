@@ -1,6 +1,5 @@
 module top;
-  
-  
+
   logic clk;
   initial clk=0;
   always #5 clk=~clk;
