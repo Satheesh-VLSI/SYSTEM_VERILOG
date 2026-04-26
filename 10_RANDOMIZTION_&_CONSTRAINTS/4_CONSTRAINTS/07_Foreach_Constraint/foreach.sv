@@ -1,4 +1,4 @@
-module array_random;
+module foreach_constraint;
  class dynamic_array;
    rand logic [7:0] arr [];
    
