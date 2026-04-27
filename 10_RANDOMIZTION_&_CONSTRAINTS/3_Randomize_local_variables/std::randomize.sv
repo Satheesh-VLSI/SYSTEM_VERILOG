@@ -22,6 +22,12 @@ module std_randomize;
     $display("=========================================");
     repeat(10) begin
       std::randomize(write,data,tr.flag);
+        // std::randomize(write, data, tr.flag) with {
+        //    write == 1 -> data inside {[100:200]};
+        //    write == 0 -> data == 0;
+        //   tr.flag == 1 -> write == 1;
+        //    };
+
       if (tr.randomize()) begin
         if (write)
           $display("WRITE | ID=%0d ADDR=%0d DATA=%0d FLAG=%B",tr.id,tr.addr,data,tr.flag);
