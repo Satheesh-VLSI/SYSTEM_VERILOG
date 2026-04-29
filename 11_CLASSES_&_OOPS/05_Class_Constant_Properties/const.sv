@@ -2,6 +2,7 @@ class Packet;
   const int width,depth;
   // Data members
   randc int address;
+  
   rand int data;
   bit write;   // 1 = WRITE,0 = READ
   int read_data;
