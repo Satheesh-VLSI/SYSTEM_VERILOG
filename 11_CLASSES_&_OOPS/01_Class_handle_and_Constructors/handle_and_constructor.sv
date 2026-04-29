@@ -12,7 +12,7 @@ class bank_account;
   endfunction:deposit
   
   function void withdraw(int amount);
-    if(balance>amount)
+    if(balance>=amount)
       balance-=amount;
     else begin
       $display("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
