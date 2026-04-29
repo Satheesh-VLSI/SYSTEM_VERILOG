@@ -13,7 +13,7 @@ class Gate;
     $display("Inputs: a=%0b | b=%0b",a,b);
   endfunction
 
-endclass
+endclass:Gate
 
 
   //Child 
@@ -34,7 +34,7 @@ class AndGate extends Gate;
     $display("---------------------------");
   endfunction
 
-endclass
+endclass:AndGate
 
 
 class OrGate extends Gate;
@@ -54,10 +54,10 @@ class OrGate extends Gate;
     $display("---------------------------");
   endfunction
 
-endclass
+endclass:OrGate
 
 
-module test;
+module test_gate;
 
   initial begin
     AndGate g1;
@@ -66,8 +66,8 @@ module test;
     $display("         SUPER Keyword");
     $display("=================================");
 
-    g1 = new(1,0);
-    g2 = new(1,0);
+    g1=new(1,0);
+    g2=new(1,0);
 
     g1.display();
     g2.display();
