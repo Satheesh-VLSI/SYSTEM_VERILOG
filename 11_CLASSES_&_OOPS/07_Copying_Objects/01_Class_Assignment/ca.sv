@@ -47,50 +47,49 @@ module handle_construct;
     acc2=acc1;
     
     acc1.deposit(4000);
-    $display(" After Depositing 4000 through acc1 Object");
+    $display("After Depositing 4000 through acc1 Object:");
     acc1.display();
     acc2.deposit(2999);
-    $display(" After Depositing 2999 through acc2 Object");
+    $display("After Depositing 2999 through acc2 Object:");
     acc2.display();
     
     acc1.withdraw(9999);
-    $display(" After Depositing 9999 through acc1 Object");
+    $display("After Depositing 9999 through acc1 Object:");
     acc1.display();
     acc2.withdraw(7000);
-    $display(" After Depositing 7000 through acc2 Object");
+    $display("After Depositing 7000 through acc2 Object:");
     acc2.display();
     
   
   end 
 endmodule:handle_construct
-
 /*
 =================================
        CLASS ASSIGNMENT
 =================================
 
- After Depositing 4000 through acc1 Object
+After Depositing 4000 through acc1 Object:
 
 ===================================
         Bank Account Details
   Account NO.: 49
   Balance: 19000  
 ===================================
- After Depositing 2999 through acc2 Object
+After Depositing 2999 through acc2 Object:
 
 ===================================
         Bank Account Details
   Account NO.: 49
   Balance: 21999  
 ===================================
- After Depositing 9999 through acc1 Object
+After Depositing 9999 through acc1 Object:
 
 ===================================
         Bank Account Details
   Account NO.: 49
   Balance: 12000  
 ===================================
- After Depositing 7000 through acc2 Object
+After Depositing 7000 through acc2 Object:
 
 ===================================
         Bank Account Details
