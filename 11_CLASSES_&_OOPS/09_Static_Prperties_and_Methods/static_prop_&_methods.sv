@@ -73,6 +73,7 @@ class UART_driver extends Driver;
     
     tr.display();
     tr.update_stats(tr.write);
+    
     if(tr.write)begin
       $display("Sending Start Bit...");
       $display("Sending Data : %0d",tr.data);
@@ -81,6 +82,7 @@ class UART_driver extends Driver;
       $display("Receiving Start Bit...");
       $display("Receiving Data....");
       $display("Receiving Stop Bit...");end
+    
   endfunction
   
 endclass:UART_driver
@@ -92,6 +94,7 @@ class SPI_driver extends Driver;
     
       tr.display();
       tr.update_stats(tr.write);
+      
       if(tr.write)begin
         $display("Driving SPI CLock...");
         $display("Sending Data : %0d through MOSI",tr.data);
@@ -100,6 +103,7 @@ class SPI_driver extends Driver;
         $display("Driving SPI CLock...");
         $display("Sending Addr : %0d through MOSI",tr.addr);
         $display("Receiving Data through MISO....");end
+      
   endfunction
 endclass:SPI_driver
                
@@ -128,7 +132,7 @@ endclass:Memory_driver
      Transaction t[3];
      
      $display("=========================================");
-     $display("      Virtual Methods : Functions");
+     $display("     STATIC PROPERTIES AND METHODS");
      $display("=========================================");
      
      
@@ -157,10 +161,9 @@ endclass:Memory_driver
    end
  endmodule
 
-
 /*
 =========================================
-      Virtual Methods : Functions
+     STATIC PROPERTIES AND METHODS
 =========================================
 
 Memory Driver
@@ -348,5 +351,4 @@ Receiving Data through MISO....
 |  Total No. of Transactions : 30          |
 |  No. of Writes             : 13          |
 |  No. of Reads              : 17          |
-+------------------------------------------+
-*/
++------------------------------------------+*/
