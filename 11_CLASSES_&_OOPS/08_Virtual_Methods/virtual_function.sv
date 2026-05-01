@@ -77,10 +77,11 @@ endclass:Memory_driver
      Memory_driver drv1=new();
      UART_driver drv2=new();
      SPI_driver drv3=new();
-     
+      
      Transaction t[3];
+     
      $display("=========================================");
-     $display("           Virtual Methods");
+     $display("      Virtual Methods : Functions");
      $display("=========================================");
      repeat(10) begin
        foreach (t[i]) begin 
@@ -103,10 +104,10 @@ endclass:Memory_driver
    end
  endmodule
 
-
 /*
+
 =========================================
-           Virtual Methods
+      Virtual Methods : Functions
 =========================================
 
 Memory Driver
@@ -232,6 +233,7 @@ SPI Driver
 Driving SPI CLock...
 Sending Data : 24 through MOSI
 Receiving Data through MISO....
+
 ----------------------------------------------
 
 Memory Driver
@@ -285,4 +287,5 @@ SPI Driver
 Driving SPI CLock...
 Sending Data : 17 through MOSI
 Receiving Data through MISO....
+
 ----------------------------------------------*/
