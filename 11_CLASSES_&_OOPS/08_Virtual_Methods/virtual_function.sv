@@ -10,7 +10,7 @@ class Transaction;
     else
       data==0;
     
-    
+    write dist {1:=5,0:=4};
   }
   
   function push(int addr,data,bit write);
@@ -40,9 +40,15 @@ class UART_driver extends Driver;
     $display("\nUART Driver");
     tr.display();
     
-    $display("Sending Start Bit...");
-    $display("Sending Data : %0d",tr.data);
-    $display("Sending Stop Bit...");
+    if(tr.write)begin
+      $display("Sending Start Bit...");
+      $display("Sending Data : %0d",tr.data);
+      $display("Sending Stop Bit...");end
+    else begin
+      $display("Receiving Start Bit...");
+      $display("Receiving Data....");
+      $display("Receiving Stop Bit...");end
+    
   endfunction
   
 endclass:UART_driver
@@ -52,9 +58,16 @@ class SPI_driver extends Driver;
     function void drive();
       $display("\nSPI Driver");
       tr.display();
-      $display("Driving SPI CLock...");
-      $display("Sending Data : %0d through MOSI",tr.data);
-      $display("Receiving Data through MISO....");
+      
+      if(tr.write)begin
+        $display("Driving SPI CLock...");
+        $display("Sending Data : %0d through MOSI",tr.data);
+        $display("Receiving Data through MISO....");end
+      else begin
+        $display("Driving SPI CLock...");
+        $display("Sending Addr : %0d through MOSI",tr.addr);
+        $display("Receiving Data through MISO....");end
+      
   endfunction
 endclass:SPI_driver
                
@@ -105,68 +118,67 @@ endclass:Memory_driver
  endmodule
 
 /*
-
 =========================================
       Virtual Methods : Functions
 =========================================
 
 Memory Driver
-[TX] addr=21 data=22 write=1
-Driving Write Operation : addr = 21 | data = 22 
+[TX] addr=21 data=13 write=1
+Driving Write Operation : addr = 21 | data = 13 
 
 UART Driver
-[TX] addr=6 data=40 write=1
-Sending Start Bit...
-Sending Data : 40
-Sending Stop Bit...
+[TX] addr=6 data=0 write=0
+Receiving Start Bit...
+Receiving Data....
+Receiving Stop Bit...
 
 SPI Driver
-[TX] addr=1 data=35 write=1
+[TX] addr=1 data=0 write=0
 Driving SPI CLock...
-Sending Data : 35 through MOSI
+Sending Addr : 1 through MOSI
 Receiving Data through MISO....
 
 ----------------------------------------------
 
 Memory Driver
-[TX] addr=11 data=4 write=1
-Driving Write Operation : addr = 11 | data = 4 
+[TX] addr=11 data=0 write=0
+Driving Read Operation from addr = 11  
 
 UART Driver
-[TX] addr=46 data=2 write=1
+[TX] addr=46 data=4 write=1
 Sending Start Bit...
-Sending Data : 2
+Sending Data : 4
 Sending Stop Bit...
 
 SPI Driver
-[TX] addr=77 data=21 write=1
+[TX] addr=77 data=0 write=0
 Driving SPI CLock...
-Sending Data : 21 through MOSI
+Sending Addr : 77 through MOSI
 Receiving Data through MISO....
 
 ----------------------------------------------
 
 Memory Driver
-[TX] addr=13 data=32 write=1
-Driving Write Operation : addr = 13 | data = 32 
+[TX] addr=13 data=0 write=0
+Driving Read Operation from addr = 13  
 
 UART Driver
-[TX] addr=37 data=15 write=1
-Sending Start Bit...
-Sending Data : 15
-Sending Stop Bit...
+[TX] addr=37 data=0 write=0
+Receiving Start Bit...
+Receiving Data....
+Receiving Stop Bit...
 
 SPI Driver
-[TX] addr=80 data=33 write=1
+[TX] addr=80 data=34 write=1
 Driving SPI CLock...
-Sending Data : 33 through MOSI
+Sending Data : 34 through MOSI
 Receiving Data through MISO....
 
 ----------------------------------------------
 
 Memory Driver
-[TX] addr=14 data=10 write=1
-Driving Write Operation : addr = 14 | data = 10 
+[TX] addr=14 data=0 write=0
+Driving Read Operation from addr = 14  
 
 UART Driver
 [TX] addr=25 data=0 write=1
@@ -175,58 +187,58 @@ Sending Data : 0
 Sending Stop Bit...
 
 SPI Driver
-[TX] addr=96 data=2 write=1
+[TX] addr=96 data=0 write=0
 Driving SPI CLock...
-Sending Data : 2 through MOSI
+Sending Addr : 96 through MOSI
 Receiving Data through MISO....
 
 ----------------------------------------------
 
 Memory Driver
-[TX] addr=8 data=43 write=1
-Driving Write Operation : addr = 8 | data = 43 
+[TX] addr=8 data=0 write=0
+Driving Read Operation from addr = 8  
 
 UART Driver
-[TX] addr=39 data=15 write=1
+[TX] addr=39 data=0 write=0
+Receiving Start Bit...
+Receiving Data....
+Receiving Stop Bit...
+
+SPI Driver
+[TX] addr=18 data=0 write=0
+Driving SPI CLock...
+Sending Addr : 18 through MOSI
+Receiving Data through MISO....
+
+----------------------------------------------
+
+Memory Driver
+[TX] addr=58 data=32 write=1
+Driving Write Operation : addr = 58 | data = 32 
+
+UART Driver
+[TX] addr=99 data=21 write=1
 Sending Start Bit...
-Sending Data : 15
+Sending Data : 21
 Sending Stop Bit...
 
 SPI Driver
-[TX] addr=18 data=10 write=1
+[TX] addr=73 data=5 write=1
 Driving SPI CLock...
-Sending Data : 10 through MOSI
+Sending Data : 5 through MOSI
 Receiving Data through MISO....
 
 ----------------------------------------------
 
 Memory Driver
-[TX] addr=58 data=0 write=0
-Driving Read Operation from addr = 58  
+[TX] addr=55 data=15 write=1
+Driving Write Operation : addr = 55 | data = 15 
 
 UART Driver
-[TX] addr=99 data=14 write=1
-Sending Start Bit...
-Sending Data : 14
-Sending Stop Bit...
-
-SPI Driver
-[TX] addr=73 data=6 write=1
-Driving SPI CLock...
-Sending Data : 6 through MOSI
-Receiving Data through MISO....
-
-----------------------------------------------
-
-Memory Driver
-[TX] addr=55 data=23 write=1
-Driving Write Operation : addr = 55 | data = 23 
-
-UART Driver
-[TX] addr=76 data=8 write=1
-Sending Start Bit...
-Sending Data : 8
-Sending Stop Bit...
+[TX] addr=76 data=0 write=0
+Receiving Start Bit...
+Receiving Data....
+Receiving Stop Bit...
 
 SPI Driver
 [TX] addr=5 data=24 write=1
@@ -237,55 +249,56 @@ Receiving Data through MISO....
 ----------------------------------------------
 
 Memory Driver
-[TX] addr=78 data=36 write=1
-Driving Write Operation : addr = 78 | data = 36 
+[TX] addr=78 data=33 write=1
+Driving Write Operation : addr = 78 | data = 33 
 
 UART Driver
-[TX] addr=24 data=46 write=1
-Sending Start Bit...
-Sending Data : 46
-Sending Stop Bit...
+[TX] addr=24 data=0 write=0
+Receiving Start Bit...
+Receiving Data....
+Receiving Stop Bit...
 
 SPI Driver
-[TX] addr=29 data=28 write=1
+[TX] addr=29 data=0 write=0
 Driving SPI CLock...
-Sending Data : 28 through MOSI
+Sending Addr : 29 through MOSI
 Receiving Data through MISO....
 
 ----------------------------------------------
 
 Memory Driver
-[TX] addr=6 data=45 write=1
-Driving Write Operation : addr = 6 | data = 45 
+[TX] addr=6 data=43 write=1
+Driving Write Operation : addr = 6 | data = 43 
 
 UART Driver
-[TX] addr=95 data=28 write=1
+[TX] addr=95 data=25 write=1
 Sending Start Bit...
-Sending Data : 28
+Sending Data : 25
 Sending Stop Bit...
 
 SPI Driver
-[TX] addr=88 data=25 write=1
+[TX] addr=88 data=26 write=1
 Driving SPI CLock...
-Sending Data : 25 through MOSI
+Sending Data : 26 through MOSI
 Receiving Data through MISO....
 
 ----------------------------------------------
 
 Memory Driver
-[TX] addr=9 data=38 write=1
-Driving Write Operation : addr = 9 | data = 38 
+[TX] addr=9 data=37 write=1
+Driving Write Operation : addr = 9 | data = 37 
 
 UART Driver
-[TX] addr=57 data=35 write=1
-Sending Start Bit...
-Sending Data : 35
-Sending Stop Bit...
+[TX] addr=57 data=0 write=0
+Receiving Start Bit...
+Receiving Data....
+Receiving Stop Bit...
 
 SPI Driver
-[TX] addr=2 data=17 write=1
+[TX] addr=2 data=0 write=0
 Driving SPI CLock...
-Sending Data : 17 through MOSI
+Sending Addr : 2 through MOSI
 Receiving Data through MISO....
 
-----------------------------------------------*/
+----------------------------------------------
+*/
