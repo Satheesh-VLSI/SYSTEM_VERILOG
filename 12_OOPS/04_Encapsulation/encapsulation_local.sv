@@ -17,7 +17,7 @@ class child extends parent;
   function void display();
     $display("\nValue of data inside child from parent's local variable: %0d\n",get_data());
     
-   // $display("Value of data inside child from parent's local variable: %0d",data());
+    // $display("Value of data inside child from parent's local variable: %0d",data()); ==>>THIS WILL RISE ERROR the data VARIABLE IS LOCAL TO PARENT CLASS
     
   endfunction
 endclass
